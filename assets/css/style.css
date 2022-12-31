@@ -1,0 +1,9 @@
+.saveBtn {
+    font-size: 20px;
+}
+
+.saveBtn:hover i {
+    color: white;
+    font-size: 32px;
+    transition: all 0.3s ease-in-out;
+}
