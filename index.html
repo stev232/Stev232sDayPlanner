@@ -4,11 +4,113 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Day Planner</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+        crossorigin="anonymous">
+
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous" />
 
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
-    <body>
-        
+    <body class="h-100 w-100 bg-dark m-0 p-0">
+        <section class="row justify-content-center m-0 p-0">
+            <header class="h-20 bg-secondary text-light text-center col-11 rounded-bottom-4">
+                <p class="fs-1 m-0">Welcome to your work day planner!</p>
+                <p class="fs-3 m-0">The date is</p>
+                <p class="fs-3 m-0" id="date"></p>
+            </header>
+        </section>
+        <main>
+            <section class="h-100 mt-4 fs-4" id="planner">
+                <section class="row justify-content-center p-0 m-0" style="height: 100px;" id="hourOne">
+                    <section class="h-100 col-1 bg-light text-dark border border-dark border-2 rounded-4 rounded-bottom-0 rounded-end-0 d-flex justify-content-center align-items-center" id="hourOneTime">
+                        <p id="hourOneTimeHolder"></p>
+                    </section>
+                    <section class="h-100 col-9 text-dark border border-dark border-2 border-start-0 border-end-0" id="hourOneContent"></section>
+                    <button class="h-100 col-1 bg-info text-dark border border-dark border-2 rounded-4 rounded-bottom-0 rounded-start-0 saveBtn" id="hourOneSave">
+                        <i class="fas fa-save"></i>
+                    </button>
+                </section>
+                <section class="row justify-content-center p-0 m-0" style="height: 100px;" id="hourTwo">
+                    <section class="h-100 col-1 bg-light text-dark border border-dark border-2 border-top-0 d-flex justify-content-center align-items-center" id="hourTwoTime">
+                        <p id="hourTwoTimeHolder"></p>
+                    </section>
+                    <section class="h-100 col-9 text-dark border border-dark border-2 border-start-0 border-end-0 border-top-0" id="hourTwoContent"></section>
+                    <button class="h-100 col-1 bg-info text-dark border border-dark border-2 border-top-0 saveBtn" id="hourTwoSave">
+                        <i class="fas fa-save"></i>
+                    </button>
+                </section>
+                <section class="row justify-content-center p-0 m-0" style="height: 100px;" id="hourThree">
+                    <section class="h-100 col-1 bg-light text-dark border border-dark border-2 border-top-0 d-flex justify-content-center align-items-center" id="hourThreeTime">
+                        <p id="hourThreeTimeHolder"></p>
+                    </section>
+                    <section class="h-100 col-9 text-dark border border-dark border-2 border-start-0 border-end-0 border-top-0" id="hourThreeContent"></section>
+                    <button class="h-100 col-1 bg-info text-dark border border-dark border-2 border-top-0 saveBtn" id="hourThreeSave">
+                        <i class="fas fa-save"></i>
+                    </button>
+                </section>
+                <section class="row justify-content-center p-0 m-0" style="height: 100px;" id="hourFour">
+                    <section class="h-100 col-1 bg-light text-dark border border-dark border-2 border-top-0 d-flex justify-content-center align-items-center" id="hourFourTime">
+                        <p id="hourFourTimeHolder"></p>
+                    </section>
+                    <section class="h-100 col-9 text-dark border border-dark border-2 border-start-0 border-end-0 border-top-0" id="hourFourContent"></section>
+                    <button class="h-100 col-1 bg-info text-dark border border-dark border-2 border-top-0 saveBtn" id="hourFourSave">
+                        <i class="fas fa-save"></i>
+                    </button>
+                </section>
+                <section class="row justify-content-center p-0 m-0" style="height: 100px;" id="hourFive">
+                    <section class="h-100 col-1 bg-light text-dark border border-dark border-2 border-top-0 d-flex justify-content-center align-items-center" id="hourFiveTime">
+                        <p id="hourFiveTimeHolder"></p>
+                    </section>
+                    <section class="h-100 col-9 text-dark border border-dark border-2 border-start-0 border-end-0 border-top-0" id="hourFiveContent"></section>
+                    <button class="h-100 col-1 bg-info text-dark border border-dark border-2 border-top-0 saveBtn" id="hourFiveSave">
+                        <i class="fas fa-save"></i>
+                    </button>
+                </section>
+                <section class="row justify-content-center p-0 m-0" style="height: 100px;" id="hourSix">
+                    <section class="h-100 col-1 bg-light text-dark border border-dark border-2 border-top-0 d-flex justify-content-center align-items-center" id="hourSixTime">
+                        <p id="hourSixTimeHolder"></p>
+                    </section>
+                    <section class="h-100 col-9 text-dark border border-dark border-2 border-start-0 border-end-0 border-top-0" id="hourSixContent"></section>
+                    <button class="h-100 col-1 bg-info text-dark border border-dark border-2 border-top-0 saveBtn" id="hourSixSave">
+                        <i class="fas fa-save"></i>
+                    </button>
+                </section>
+                <section class="row justify-content-center p-0 m-0" style="height: 100px;" id="hourSeven">
+                    <section class="h-100 col-1 bg-light text-dark border border-dark border-2 border-top-0 d-flex justify-content-center align-items-center" id="hourSevenTime">
+                        <p id="hourSevenTimeHolder"></p>
+                    </section>
+                    <section class="h-100 col-9 text-dark border border-dark border-2 border-start-0 border-end-0 border-top-0" id="hourSevenContent"></section>
+                    <button class="h-100 col-1 bg-info text-dark border border-dark border-2 border-top-0 saveBtn" id="hourSevenSave">
+                        <i class="fas fa-save"></i>
+                    </button>
+                </section>
+                <section class="row justify-content-center p-0 m-0" style="height: 100px;" id="hourEight">
+                    <section class="h-100 col-1 bg-light text-dark border border-dark border-2 border-top-0 d-flex justify-content-center align-items-center" id="hourEightTime">
+                        <p id="hourEightTimeHolder"></p>
+                    </section>
+                    <section class="h-100 col-9 text-dark border border-dark border-2 border-start-0 border-end-0 border-top-0" id="hourEightContent"></section>
+                    <button class="h-100 col-1 bg-info text-dark border border-dark border-2 border-top-0 saveBtn" id="hourEightSave">
+                        <i class="fas fa-save"></i>
+                    </button>
+                </section>
+                <section class="row justify-content-center p-0 m-0" style="height: 100px;" id="hourNine">
+                    <section class="h-100 col-1 bg-light text-dark border border-dark border-2 border-top-0 rounded-4 rounded-top-0 rounded-end-0 d-flex justify-content-center align-items-center" id="hourNineTime">
+                        <p id="hourNineTimeHolder"></p>
+                    </section>
+                    <section class="h-100 col-9 text-dark border border-dark border-2 border-start-0 border-end-0 border-top-0" id="hourNineContent"></section>
+                    <button class="h-100 col-1 bg-info text-dark border border-dark border-2 border-top-0 rounded-4 rounded-top-0 rounded-start-0 saveBtn" id="hourNineSave">
+                        <i class="fas fa-save"></i>
+                    </button>
+                </section>
+            </section>
+        </main>
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>
