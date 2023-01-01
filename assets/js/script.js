@@ -6,11 +6,16 @@ const hourEl = [['hourOne', 'hourOneTimeHolder', 'hourOneContent', 'hourOneConte
 ['hourSeven', 'hourSevenTimeHolder', 'hourSevenContent', 'hourSevenContentHolder', 'hourSevenSave'], ['hourEight', 'hourEightTimeHolder', 'hourEightContent', 'hourEightContentHolder', 'hourEightSave'], 
 ['hourNine', 'hourNineTimeHolder', 'hourNineContent', 'hourNineContentHolder', 'hourNineSave']];
 
-var isCurrent = true;
+var isCurrent;
 var isPast;
 var suffixIndex;
 
+var today = dayjs();
+document.getElementById('date').textContent = today.format('dddd, MMMM DD YYYY');
+
 function runPlanner() {
+    var currentTime = dayjs().format('HH');
+
     for(var i = 0; i<hourEl.length; i++) {
         if(time[i] >= time[0] && time[i] != 12) {
             suffixIndex = 0;
@@ -19,13 +24,39 @@ function runPlanner() {
         }
     
         document.getElementById(hourEl[i][1]).textContent = time[i]+suffix[suffixIndex];
+
+        if(suffixIndex == 1 && time[i] != 12) {
+            if(time[i]+12 == currentTime) {
+                isCurrent = true;
+                isPast = false;
+            } else if(time[i]+12 < currentTime) {
+                isCurrent = false;
+                isPast = true;
+            } else {
+                isCurrent = false;
+                isPast = false;
+            }
+        } else {
+            if(time[i] == currentTime) {
+                isCurrent = true;
+                isPast = false;
+            } else if(time[i] < currentTime) {
+                isCurrent = false;
+                isPast = true;
+            } else {
+                isCurrent = false;
+                isPast = false;
+            }
+        }
     
         if(isPast) {
-            document.getElementById(hourEl[i][2]).style.backgroundColor = 'lightred';
+            document.getElementById(hourEl[i][2]).style.backgroundColor = 'pink';
         } else if(isCurrent) {
-            document.getElementById(hourEl[i][2]).style.backgroundColor = 'grey';
+            document.getElementById(hourEl[i][2]).style.backgroundColor = 'lightgrey';
         } else {
             document.getElementById(hourEl[i][2]).style.backgroundColor = 'lightgreen';
         }
     }
 }
+
+runPlanner();
