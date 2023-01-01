@@ -56,8 +56,9 @@ function runPlanner() {
         } else {
             document.getElementById(hourEl[i][3]).style.backgroundColor = 'lightgreen';
         }
-
-        document.getElementById(hourEl[i][3]).value = localStorage.getItem(hourEl[i][0]);
+        if(localStorage != null) {
+            document.getElementById(hourEl[i][3]).value = localStorage.getItem(hourEl[i][0]);
+        }
     }
 }
 
