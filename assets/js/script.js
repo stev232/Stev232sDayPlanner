@@ -9,7 +9,6 @@ const hourEl = [['hourOne', 'hourOneTimeHolder', 'hourOneContentHolder'], ['hour
 var isCurrent;
 var isPast;
 var suffixIndex;
-var loopCount;
 
 var today = dayjs();
 document.getElementById('date').textContent = today.format('dddd, MMMM DD YYYY');
@@ -65,8 +64,6 @@ function runPlanner() {
 
 function runTimer() {
     var timerInterval = setInterval(function() {
-        loopCount++;
-        console.log(loopCount);
         runPlanner();
     }, 100000);
 }
@@ -76,7 +73,6 @@ runTimer();
 
 $('.saveBtn').on('click', function(event) {
     event.preventDefault();
-    console.log(event.target.parentNode.parentNode);
     if(event.target.parentNode.parentNode.id == 'planner'){
         localStorage.setItem(event.target.parentNode.id, event.target.parentNode.children[1].children[0].value);
     } else {
