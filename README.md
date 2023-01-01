@@ -2,7 +2,7 @@
 
 ## Description
 
-This project will use DayJS to set the current day and help determine the current time. The user will input their own schedule based off of a time table that starts at 6AM and ends at 6PM (18:00). The data that the user enters will be saved in local storage to keep it as a personal day planner.
+This project will use DayJS to set the current day and help determine the current time. The user will input their own schedule based off of a time table that starts at 9AM and ends at 5PM (17:00). The data that the user enters will be saved in local storage to keep it as a personal day planner.
 
 ## Acceptance Criteria
 
@@ -19,3 +19,11 @@ __THEN__ I can enter an event<br>
 __THEN__ the text for that event is saved in local storage<br>
 *WHEN I refresh the page*<br>
 __THEN__ the saved events persist<br>
+
+## ScreenShots
+
+
+
+## Deployment Link
+
+https://stev232.github.io/Stev232sDayPlanner/
