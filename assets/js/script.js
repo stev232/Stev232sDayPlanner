@@ -56,7 +56,21 @@ function runPlanner() {
         } else {
             document.getElementById(hourEl[i][3]).style.backgroundColor = 'lightgreen';
         }
+
+        document.getElementById(hourEl[i][3]).value = localStorage.getItem(hourEl[i][0]);
     }
 }
 
 runPlanner();
+
+$('.saveBtn').on('click', function(event) {
+    event.preventDefault();
+    console.log(event.target.parentNode.parentNode);
+    if(event.target.parentNode.parentNode.id == 'planner'){
+        console.log(event.target.parentNode.children[1].children[0].value);
+        localStorage.setItem(event.target.parentNode.id, event.target.parentNode.children[1].children[0].value);
+    } else {
+        console.log(event.target.parentNode.parentNode.children[1].children[0].value);
+        localStorage.setItem(event.target.parentNode.parentNode.id, event.target.parentNode.parentNode.children[1].children[0].value);
+    }
+} );
