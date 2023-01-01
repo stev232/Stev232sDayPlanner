@@ -22,7 +22,9 @@ __THEN__ the saved events persist<br>
 
 ## ScreenShots
 
-![PLOT](./assets/screenshots/
+![PLOT](./assets/screenshots/HomePage.PNG)
+![PLOT](./assets/screenShots/schedule.PNG)
+![PLOT](./assets/screenShots/LocaleStorage.PNG)
 
 ## Deployment Link
 
