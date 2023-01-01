@@ -50,11 +50,11 @@ function runPlanner() {
         }
     
         if(isPast) {
-            document.getElementById(hourEl[i][2]).style.backgroundColor = 'pink';
+            document.getElementById(hourEl[i][3]).style.backgroundColor = 'pink';
         } else if(isCurrent) {
-            document.getElementById(hourEl[i][2]).style.backgroundColor = 'lightgrey';
+            document.getElementById(hourEl[i][3]).style.backgroundColor = 'lightgrey';
         } else {
-            document.getElementById(hourEl[i][2]).style.backgroundColor = 'lightgreen';
+            document.getElementById(hourEl[i][3]).style.backgroundColor = 'lightgreen';
         }
     }
 }
