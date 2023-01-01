@@ -21,7 +21,7 @@ function runPlanner() {
             suffixIndex = 1;
         }
     
-        document.getElementById(hourEl[i][1]).textContent = time[i]+suffix[suffixIndex];
+        document.getElementById(hourEl[i][0]).textContent = time[i]+suffix[suffixIndex];
 
         if(suffixIndex == 1 && time[i] != 12) {
             if(time[i]+12 == currentTime) {
@@ -48,14 +48,14 @@ function runPlanner() {
         }
     
         if(isPast) {
-            document.getElementById(hourEl[i][2]).style.backgroundColor = 'pink';
+            document.getElementById(hourEl[i][1]).style.backgroundColor = 'pink';
         } else if(isCurrent) {
-            document.getElementById(hourEl[i][2]).style.backgroundColor = 'lightgrey';
+            document.getElementById(hourEl[i][1]).style.backgroundColor = 'lightgrey';
         } else {
-            document.getElementById(hourEl[i][2]).style.backgroundColor = 'lightgreen';
+            document.getElementById(hourEl[i][1]).style.backgroundColor = 'lightgreen';
         }
         if(localStorage != null) {
-            document.getElementById(hourEl[i][2]).value = localStorage.getItem(hourEl[i][0]);
+            document.getElementById(hourEl[i][1]).value = localStorage.getItem(hourEl[i][0]);
         }
     }
 }
